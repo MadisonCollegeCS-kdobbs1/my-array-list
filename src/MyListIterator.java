@@ -59,9 +59,4 @@ public class MyListIterator<T extends Comparable<T>> implements ListIterator<T> 
     @Override
     public void add(T t) {}
 
-
-    public void setCursor(int cursor) {
-        this.cursor = cursor;
-    }
-
 }

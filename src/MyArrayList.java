@@ -235,12 +235,24 @@ class Main {
         myIntList.add(10);
         myIntList.add(7);
         myIntList.add(11);
+        myIntList.add(12);
         Collections.sort(myIntList);
-        System.out.println("\nList Below is sorted using Collections.Sort(myIntList) ensuring Collections.Sort works with MyArrayList and MyListIterator. As well as foreach loop works with MyArrayList<Integer> as well.");
+        System.out.println("""
+                
+                List Below is sorted using Collections.Sort(myIntList) ensuring Collections.\
+                Sort works with MyArrayList and MyListIterator. \
+                
+                As well as for-each loop works with MyArrayList<Integer> as well.
+                """);
         for (int i : myIntList) {
             System.out.println(i);
         }
-        System.out.println("\nList below ensures foreach work with MyArrayList<String>. As well as showing off creating a list with default capacity will not output null.");
+        System.out.println("""
+                
+                List below ensures for-each loop works with MyArrayList<String>. \
+                
+                As well as creating a list with less elements than default capacity will not output nulls
+                """);
 
         MyArrayList<String> myStrList = new MyArrayList<>();
         myStrList.add("Cat");
