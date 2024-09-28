@@ -9,6 +9,11 @@ public class MyListIterator<T extends Comparable<T>> implements ListIterator<T> 
         this.list = list;
     }
 
+    public MyListIterator(MyArrayList<T> list, int index){
+        this.list = list;
+        cursor = index;
+    }
+
     @Override
     public boolean hasNext() {
         return cursor != list.size;
@@ -16,8 +21,8 @@ public class MyListIterator<T extends Comparable<T>> implements ListIterator<T> 
 
     @Override
     public T next() {
+        setPointer = list.get(cursor);
         cursor++;
-        setPointer = list.get(cursor - 1);
         return list.get(cursor - 1);
     }
 
@@ -28,8 +33,8 @@ public class MyListIterator<T extends Comparable<T>> implements ListIterator<T> 
 
     @Override
     public T previous() {
-        cursor--;
         setPointer = list.get(cursor + 1);
+        cursor--;
         return list.get(cursor + 1);
     }
 
@@ -53,4 +58,10 @@ public class MyListIterator<T extends Comparable<T>> implements ListIterator<T> 
 
     @Override
     public void add(T t) {}
+
+
+    public void setCursor(int cursor) {
+        this.cursor = cursor;
+    }
+
 }
